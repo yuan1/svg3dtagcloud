@@ -5,22 +5,71 @@
 
     <meta charset='utf-8'>
     <title>SVG3DTagCloud - Example 3</title>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-    <script src='js/jquery.svg3dtagcloud.min.js'></script>
-
-    <link href='https://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src='js/svg3dtagcloud.js'></script>
 
     <style type='text/css'>
-
-        html, body, div, span, applet, object, iframe,
-        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-        a, abbr, acronym, address, big, cite, code,
-        del, dfn, em, font, img, ins, kbd, q, s, samp,
-        small, strike, strong, sub, sup, tt, var,
-        b, u, i, center,
-        dl, dt, dd, ol, ul, li,
-        fieldset, form, label, legend,
-        table, caption, tbody, tfoot, thead, tr, th, td {
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        font,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td {
             margin: 0;
             padding: 0;
             border: 0;
@@ -35,15 +84,22 @@
             overflow: hidden;
             background-color: #000;
         }
-
     </style>
+
+
+</head>
+
+<body>
+
+    <div id='holder'></div>
 
     <script>
 
-    	$( document ).ready( function() {
 
-            var entries = [ 
-               
+        (function () {
+
+            var entries = [
+
                 { image: './img/Basket.png', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Lorem ipsum' },
                 { image: './img/Briefcase.png', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Dolor sit amet' },
                 { image: './img/Brush.png', width: '50', height: '50', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'Consetetur sadipscing' },
@@ -104,14 +160,14 @@
                 opacitySpeed: 6,
                 fov: 800,
                 speed: 2,
-                fontFamily: 'Oswald, Arial, sans-serif',
+                fontFamily: 'Arial, sans-serif',
                 fontSize: '15',
                 fontColor: '#fff',
                 fontWeight: 'normal',//bold
                 fontStyle: 'normal',//italic 
                 fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
                 fontToUpperCase: true,
-                tooltipFontFamily: 'Oswald, Arial, sans-serif',
+                tooltipFontFamily: 'Arial, sans-serif',
                 tooltipFontSize: '11',
                 tooltipFontColor: '#fff',
                 tooltipFontWeight: 'normal',//bold
@@ -124,17 +180,9 @@
 
             };
 
-            //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
-            $( '#holder' ).svg3DTagCloud( settings );
+            var svg3DTagCloud = new SVG3DTagCloud(document.getElementById('holder'), settings);
 
-		} );
-        
+        }());
+
     </script>
-
-</head>
-
-<body>
-
-    <div id='holder'></div>
-
 </body>

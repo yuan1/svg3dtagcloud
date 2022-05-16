@@ -1,5 +1,5 @@
-# SVG 3D Tag Cloud jQuery plugin
-(jquery-svg3dtagcloud-plugin)
+# SVG 3D Tag Cloud
+(-svg3dtagcloud)
 
 ## Preview
 
@@ -7,20 +7,7 @@
 
 ## Description
 
-A very small and CSS-less jQuery plugin for drawing a 3D, interactive, SVG based and fully customizable sphere tag cloud from an array of html links.
-
-## Examples
-
-### JSFiddle
-
-* <https://jsfiddle.net/NiklasKnaack/wr9moazp/>
-
-### More Examples
-
-* <http://nkunited.de/jquery/plugins/svg3dtagcloudV2/example1.html>
-* <http://nkunited.de/jquery/plugins/svg3dtagcloudV2/example2.html>
-* <http://nkunited.de/jquery/plugins/svg3dtagcloudV2/example3.html>
-* <http://nkunited.de/jquery/plugins/svg3dtagcloudV2/example4.html>
+A very small and CSS-less plugin for drawing a 3D, interactive, SVG based and fully customizable sphere tag cloud from an array of html links.
 
 ## Installation
 
@@ -31,10 +18,8 @@ Coming soon.
 ### HTML
 
 ```html
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-<script src='js/jquery.svg3dtagcloud.min.js'></script>
+<script src='js/svg3dtagcloud.js'></script>
 
-<link href='https://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 ```
 
 ### Define entries (text tags):
@@ -43,7 +28,7 @@ var entries = [
     
     { label: 'Dev Blog', url: 'http://niklasknaack.blogspot.de/', target: '_top' },
     { label: 'Flashforum', url: 'http://www.flashforum.de/', target: '_top' },
-    { label: 'jQueryScript.net', url: 'http://www.jqueryscript.net/', target: '_top' },
+    { label: 'Script.net', url: 'http://www.script.net/', target: '_top' },
     { label: 'Javascript-Forum', url: 'http://forum.jswelt.de/', target: '_top' },
     { label: 'JSFiddle', url: 'https://jsfiddle.net/user/NiklasKnaack/fiddles/', target: '_top' },
     { label: 'CodePen', url: 'http://codepen.io/', target: '_top' },
@@ -66,9 +51,9 @@ var entries = [
     { label: 'CreateJS', url: 'http://createjs.com/', target: '_top' },
     { label: 'Velocity.js', url: 'http://julian.com/research/velocity/', target: '_top' },
     { label: 'TweenLite', url: 'https://greensock.com/docs/#/HTML5/GSAP/TweenLite/', target: '_top' },
-    { label: 'jQuery', url: 'https://jquery.com/', target: '_top' },
-    { label: 'jQuery Rain', url: 'http://www.jqueryrain.com/', target: '_top' },
-    { label: 'jQuery Plugins', url: 'http://jquery-plugins.net/', target: '_top' },
+    { label: '', url: 'https://.com/', target: '_top' },
+    { label: ' Rain', url: 'http://www.rain.com/', target: '_top' },
+    { label: ' Plugins', url: 'http://-plugins.net/', target: '_top' },
 
 ];
 ```
@@ -79,7 +64,7 @@ var entries = [
     
     { label: 'Dev Blog', url: 'http://niklasknaack.blogspot.de/', target: '_top', tooltip: 'Lorem ipsum' },
     { label: 'Flashforum', url: 'http://www.flashforum.de/', target: '_top', tooltip: 'Dolor sit amet' },
-    { label: 'jQueryScript.net', url: 'http://www.jqueryscript.net/', target: '_top', tooltip: 'Consetetur sadipscing' },
+    { label: 'Script.net', url: 'http://www.script.net/', target: '_top', tooltip: 'Consetetur sadipscing' },
     { label: 'Javascript-Forum', url: 'http://forum.jswelt.de/', target: '_top', tooltip: 'Sed diam' },
     { label: 'JSFiddle', url: 'https://jsfiddle.net/user/NiklasKnaack/fiddles/', target: '_top' },
     { label: 'CodePen', url: 'http://codepen.io/', target: '_top', tooltip: 'At vero' },
@@ -102,9 +87,9 @@ var entries = [
     { label: 'CreateJS', url: 'http://createjs.com/', target: '_top', tooltip: 'Dignissim qui' },
     { label: 'Velocity.js', url: 'http://julian.com/research/velocity/', target: '_top', tooltip: 'Et iusto odio' },
     { label: 'TweenLite', url: 'https://greensock.com/docs/#/HTML5/GSAP/TweenLite/', target: '_top', tooltip: 'Facilisis at vero' },
-    { label: 'jQuery', url: 'https://jquery.com/', target: '_top', tooltip: 'Dolore eu' },
-    { label: 'jQuery Rain', url: 'http://www.jqueryrain.com/', target: '_top', tooltip: 'In vulputate' },
-    { label: 'jQuery Plugins', url: 'http://jquery-plugins.net/', target: '_top', tooltip: 'In vulputate' }
+    { label: '', url: 'https://.com/', target: '_top', tooltip: 'Dolore eu' },
+    { label: ' Rain', url: 'http://www.rain.com/', target: '_top', tooltip: 'In vulputate' },
+    { label: ' Plugins', url: 'http://-plugins.net/', target: '_top', tooltip: 'In vulputate' }
 
 ];
 ```
@@ -228,14 +213,14 @@ var settings = {
     opacitySpeed: 6,
     fov: 800,
     speed: 2,
-    fontFamily: 'Oswald, Arial, sans-serif',
+    fontFamily: 'Arial, sans-serif',
     fontSize: '15',
     fontColor: '#fff',
     fontWeight: 'normal',//bold
     fontStyle: 'normal',//italic 
     fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
     fontToUpperCase: true,
-    tooltipFontFamily: 'Oswald, Arial, sans-serif',
+    tooltipFontFamily: 'Arial, sans-serif',
     tooltipFontSize: '11',
     tooltipFontColor: '#fff',
     tooltipFontWeight: 'normal',//bold
@@ -251,11 +236,6 @@ var settings = {
 };
 ```
 
-### jQuery:
-
-```js
-$( '#holder' ).svg3DTagCloud( settings );
-```
 
 ### JS:
 

@@ -5,22 +5,71 @@
 
     <meta charset='utf-8'>
     <title>SVG3DTagCloud - Example 1</title>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-    <script src='js/jquery.svg3dtagcloud.min.js'></script>
-
-    <link href='https://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src='js/svg3dtagcloud.js'></script>
 
     <style type='text/css'>
-
-        html, body, div, span, applet, object, iframe,
-        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-        a, abbr, acronym, address, big, cite, code,
-        del, dfn, em, font, img, ins, kbd, q, s, samp,
-        small, strike, strong, sub, sup, tt, var,
-        b, u, i, center,
-        dl, dt, dd, ol, ul, li,
-        fieldset, form, label, legend,
-        table, caption, tbody, tfoot, thead, tr, th, td {
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        font,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td {
             margin: 0;
             padding: 0;
             border: 0;
@@ -35,15 +84,18 @@
             overflow: hidden;
             background-color: #000;
         }
-
     </style>
 
-    <script>
 
-    	$( document ).ready( function() {
+</head>
 
-            var entries = [ 
-                
+<body>
+
+    <div id='holder'></div>
+
+    <script type="text/javascript">
+        (function () {
+            var entries = [
                 { label: 'Dev Blog', url: 'http://niklasknaack.blogspot.de/', target: '_top' },
                 { label: 'Flashforum', url: 'http://www.flashforum.de/', target: '_top' },
                 { label: 'jQueryScript.net', url: 'http://www.jqueryscript.net/', target: '_top' },
@@ -74,9 +126,7 @@
                 { label: 'jQuery Plugins', url: 'http://jquery-plugins.net/', target: '_top' },
 
             ];
-
             var settings = {
-
                 entries: entries,
                 width: 480,
                 height: 480,
@@ -89,14 +139,14 @@
                 opacitySpeed: 6,
                 fov: 800,
                 speed: 2,
-                fontFamily: 'Oswald, Arial, sans-serif',
+                fontFamily: 'Arial, sans-serif',
                 fontSize: '15',
                 fontColor: '#fff',
                 fontWeight: 'normal',//bold
                 fontStyle: 'normal',//italic 
                 fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
                 fontToUpperCase: true,
-                tooltipFontFamily: 'Oswald, Arial, sans-serif',
+                tooltipFontFamily: 'Arial, sans-serif',
                 tooltipFontSize: '11',
                 tooltipFontColor: '#fff',
                 tooltipFontWeight: 'normal',//bold
@@ -108,18 +158,11 @@
                 tooltipDiffY: 10
 
             };
+            console.log(settings);
 
-            //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
-            $( '#holder' ).svg3DTagCloud( settings );
+            var svg3DTagCloud = new window.SVG3DTagCloud(document.getElementById('holder'), settings);
+            console.log(svg3DTagCloud);
 
-		} );
-        
+        }());
     </script>
-
-</head>
-
-<body>
-
-    <div id='holder'></div>
-
 </body>
