@@ -18,6 +18,7 @@
             speed: 2,
             fontFamily: 'Arial, sans-serif',
             fontSize: '15',
+            fontSizeScale: false,
             fontColor: '#fff',
             fontWeight: 'normal',//bold
             fontStyle: 'normal',//italic 
@@ -218,7 +219,6 @@
             entry.vectorPosition.x *= radius;
             entry.vectorPosition.y *= radius;
             entry.vectorPosition.z *= radius;
-
         };
 
         function addEntry(index, entryObj, x, y, z) {
@@ -438,6 +438,9 @@
                 entry.vector2D.x = entry.vectorPosition.x * scale + center2D.x;
                 entry.vector2D.y = entry.vectorPosition.y * scale + center2D.y;
 
+                if (settings.fontSizeScale) {
+                    entry.element.setAttribute('font-size', settings.fontSize * scale);
+                }
                 //---
 
                 if (entry.diffX && entry.diffY) {
@@ -481,8 +484,10 @@
                     }
 
                 }
+                var opacityVal = opacity * (1 - ((radius_factor - 1) / (settings["animatingRadiusLimit"] - 1)));
 
-                entry.element.setAttribute('opacity', opacity * (1 - ((radius_factor - 1) / (settings["animatingRadiusLimit"] - 1))));
+                entry.element.setAttribute('opacity', opacityVal);
+
 
             }
 
